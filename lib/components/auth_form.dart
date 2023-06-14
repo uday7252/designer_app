@@ -120,7 +120,7 @@ class _AuthFormState extends State<AuthForm> {
                       'Forgot Your Password ?',
                       style: TextStyle(
                           fontFamily: "Roboto",
-                          fontWeight: FontWeight.w400,
+                          fontWeight: FontWeight.w800,
                           fontSize: 15,
                           color: Colors.black),
                     )),

@@ -1,5 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
+import '../profile_screen.dart';
 import '/views/home_page.dart';
 
 import '/views/design_ideas.dart';
@@ -34,13 +35,7 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
       "page": const DesignIdeasScreen(),
     },
     {"icon": "assets/icons/hollow heart.svg", "page": const WishListScreen()},
-    {
-      "icon": "assets/icons/profile.svg",
-      "page": Container(
-        alignment: Alignment.center,
-        child: const Text('Profile'),
-      ),
-    },
+    {"icon": "assets/icons/profile.svg", "page": const ProfileScreen()},
   ];
 
 //====== set animation=====
@@ -87,9 +82,8 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
         currentIndex: _activeTabIndex,
         showUnselectedLabels: true,
         unselectedLabelStyle: const TextStyle(color: Colors.grey, fontSize: 16),
-        selectedLabelStyle: const TextStyle(
-            color: secondaryColor,
-            fontSize: 16), 
+        selectedLabelStyle:
+            const TextStyle(color: secondaryColor, fontSize: 16),
         onTap: onPageChanged,
         selectedItemColor: secondaryColor,
         unselectedItemColor: Colors.grey,
@@ -97,7 +91,7 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
           BottomNavigationBarItem(
             label: "Explore",
             icon: Container(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: const Icon(
                 Icons.search,
                 color: Colors.grey,
@@ -107,7 +101,7 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
           BottomNavigationBarItem(
             label: "Pro",
             icon: Container(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: SvgPicture.asset(
                 'assets/icons/professional.svg',
                 width: 25,
@@ -119,13 +113,13 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
           BottomNavigationBarItem(
             label: "Idea",
             icon: Container(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: const Icon(Icons.lightbulb_outline)),
           ),
           BottomNavigationBarItem(
             label: "Wishlist",
             icon: Container(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: const Icon(
                 Icons.favorite_border,
                 // color: Colors.grey,
@@ -135,7 +129,7 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
           BottomNavigationBarItem(
             label: "Profile",
             icon: Container(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: const Icon(
                   Icons.account_circle_outlined,
                   size: 25,

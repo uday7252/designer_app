@@ -36,7 +36,7 @@ class _SearchBoxState extends State<SearchBox> {
     return TextField(
       controller: _searchController,
       decoration: const InputDecoration(
-        hintText: 'Find pro, Post',
+        hintText: 'Find Pro, Post',
         hintStyle: TextStyle(
             fontFamily: 'Roboto', fontWeight: FontWeight.w400, fontSize: 18),
         suffixIcon: Icon(

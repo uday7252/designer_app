@@ -47,7 +47,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                 'Forgot Password?',
                 style: TextStyle(
                     fontFamily: 'Roboto',
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w900,
                     fontSize: 24,
                     color: Colors.black),
               ),
