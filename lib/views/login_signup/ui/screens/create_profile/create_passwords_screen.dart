@@ -98,7 +98,7 @@ class CreatePasswordScreen extends StatelessWidget {
                 child: OriginalButton(
                     text: 'Sign Up',
                     onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(
                           builder: (context) =>
                               // CreateProfileScreen()
                               const UserSelectionScreen()));
@@ -107,41 +107,6 @@ class CreatePasswordScreen extends StatelessWidget {
                     textColor: Colors.white),
               ),
               const SizedBox(height: 56),
-              const Text.rich(TextSpan(
-                  text: 'By signing you agree to our ',
-                  style: TextStyle(
-                      fontFamily: 'Roboto',
-                      fontWeight: FontWeight.w600,
-                      fontSize: 10,
-                      color: Colors.grey),
-                  children: [
-                    TextSpan(
-                        text: 'terms and condition\n',
-                        style: TextStyle(
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.w600,
-                            fontSize: 10,
-                            color: Colors.red),
-                        children: [
-                          TextSpan(
-                              text: 'and',
-                              style: TextStyle(
-                                  fontFamily: 'Roboto',
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 10,
-                                  color: Colors.grey),
-                              children: [
-                                TextSpan(
-                                    text: ' privacy policy',
-                                    style: TextStyle(
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 10,
-                                        color: Colors.red))
-                              ])
-                        ])
-                  ])),
-              const SizedBox(height: 16),
             ],
           ),
         ),

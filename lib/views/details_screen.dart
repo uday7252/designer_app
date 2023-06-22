@@ -278,36 +278,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
               decoration: const BoxDecoration(color: Colors.white),
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
-                child:
-                    // SizedBox(
-                    //   width: size.width * 0.4,
-                    //   height: 56,
-                    //   child: ElevatedButton(
-                    //     onPressed: () {},
-                    //     style: ButtonStyle(
-                    //       backgroundColor:
-                    //           MaterialStateProperty.all(Colors.white),
-                    //       shape:
-                    //           MaterialStateProperty.all<RoundedRectangleBorder>(
-                    //         RoundedRectangleBorder(
-                    //           borderRadius: BorderRadius.circular(8),
-                    //           side: const BorderSide(color: Colors.black),
-                    //         ),
-                    //       ),
-                    //     ),
-                    //     child: const Text(
-                    //       'Book Now',
-                    //       style: TextStyle(
-                    //         color: Colors.black,
-                    //         fontFamily: 'Roboto',
-                    //         fontWeight: FontWeight.w500,
-                    //         fontSize: 16,
-                    //       ),
-                    //     ),
-                    //   ),
-                    // ),
-                    // SizedBox(width: size.width * 0.05),
-                    SizedBox(
+                child: SizedBox(
                   width: double.infinity,
                   height: 56,
                   child: ElevatedButton(

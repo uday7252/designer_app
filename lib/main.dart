@@ -1,3 +1,5 @@
+import 'package:designer_app/provider/user_selection_provider.dart';
+
 import '/provider/carousel_index_provider.dart';
 import '/provider/professional_index_provider.dart';
 
@@ -15,30 +17,10 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-//   Widget build(BuildContext context) {
-//     return MultiProvider(
-//       providers: [
-//         ChangeNotifierProvider(
-//           create: (context) => StepProvider(),
-//           builder: (context, child) => MaterialApp(
-//             debugShowCheckedModeBanner: false,
-//             title: 'Designer App',
-//             theme: ThemeData(
-//               primaryColor: secondaryColor,
-//               appBarTheme: const AppBarTheme(
-//                 iconTheme: IconThemeData(color: Colors.black),
-//               ),
-//             ),
-//             home: const AuthScreen(authType: AuthType.login),
-//           ),
-//         ),
-//       ],
-//     );
-//   }
-// }
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
+        ChangeNotifierProvider<UserSelection>(create:(_)=> UserSelection()),
         ChangeNotifierProvider<StepProvider>(
           create: (_) => StepProvider(),
         ),

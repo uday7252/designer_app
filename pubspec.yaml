@@ -64,6 +64,7 @@ dev_dependencies:
   step_progress_indicator: ^1.0.2
   horizontal_stepper_flutter: ^1.0.3
   provider: ^6.0.5
+  readmore: ^2.2.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

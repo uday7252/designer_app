@@ -1,10 +1,4 @@
 // ignore_for_file: deprecated_member_use
-
-import '../profile_screen.dart';
-import '/views/home_page.dart';
-
-import '/views/design_ideas.dart';
-import '/views/wishlist_screen.dart';
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_svg/flutter_svg.dart';
@@ -12,6 +6,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../theme/color.dart';
 import '/utils/constant.dart';
 import 'home.dart';
+import 'main_screen_tabs/profile_page-V/profile_screen.dart';
+import 'main_screen_tabs/pro_page-II/pro_screen.dart';
+import 'main_screen_tabs/wishlist_page-IV/wishlist_screen.dart';
+import 'main_screen_tabs/idea_page-III/ideas_screen.dart';
 
 class RootApp extends StatefulWidget {
   const RootApp({Key? key}) : super(key: key);
@@ -29,10 +27,10 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
       "icon": "assets/icons/search.svg",
       "page": const HomePage(),
     },
-    {"icon": "assets/image/professional.svg", "page": const MyHomePage()},
+    {"icon": "assets/image/professional.svg", "page": const ProPage()},
     {
       "icon": "assets/icons/hollowbulb.svg",
-      "page": const DesignIdeasScreen(),
+      "page": const IdeasScreen(),
     },
     {"icon": "assets/icons/hollow heart.svg", "page": const WishListScreen()},
     {"icon": "assets/icons/profile.svg", "page": const ProfileScreen()},
@@ -81,7 +79,8 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _activeTabIndex,
         showUnselectedLabels: true,
-        unselectedLabelStyle: const TextStyle(color: Colors.grey, fontSize: 16),
+        unselectedLabelStyle:
+            const TextStyle(color: Colors.grey, fontSize: 16),
         selectedLabelStyle:
             const TextStyle(color: secondaryColor, fontSize: 16),
         onTap: onPageChanged,

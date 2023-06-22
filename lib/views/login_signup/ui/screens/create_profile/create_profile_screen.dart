@@ -2,10 +2,10 @@ import 'package:designer_app/provider/professional_index_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../../components/Tabs/basicInfo.dart';
-import '../../../../../components/Tabs/businessAddress.dart';
-import '../../../../../components/Tabs/chooseCategory.dart';
-import '../../../../../components/Tabs/projectDetails.dart';
+import '../../../../../components/SignUpTabs/basicInfoPage-II/basicInfo.dart';
+import '../../../../../components/SignUpTabs/BusinessAddress-III/businessAddress.dart';
+import '../../../../../components/SignUpTabs/ChooseCategory-I/chooseCategory.dart';
+import '../../../../../components/SignUpTabs/ProjectIdeas-IV/projectDetails.dart';
 import '../../../../../components/custom_radio_button.dart';
 
 class CreateProfileScreen extends StatefulWidget {
@@ -109,10 +109,10 @@ class CustomStepper extends StatelessWidget {
         Text(
           title,
           style: TextStyle(
-            color: visitedSteps[stepNumber] ? Colors.black : Colors.grey,
+            color: visitedSteps[stepNumber] ? Colors.black : Colors.grey[800],
             fontWeight:
                 visitedSteps[stepNumber] ? FontWeight.w500 : FontWeight.normal,
-            fontSize: 10,
+            fontSize: 12,
           ),
         ),
       ],

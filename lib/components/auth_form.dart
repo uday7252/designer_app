@@ -1,9 +1,12 @@
+import 'package:designer_app/provider/user_selection_provider.dart';
+
 import '/views/login_signup/ui/screens/create_profile/auth_screen.dart';
 import '/views/login_signup/ui/screens/create_profile/forgot_pwd.dart';
 import '/views/login_signup/ui/screens/create_profile/otp_screen.dart';
 import '/views/root_app.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../theme/color.dart';
 import 'original_button.dart';
@@ -156,6 +159,7 @@ class _AuthFormState extends State<AuthForm> {
                       Navigator.of(context).pushReplacement(MaterialPageRoute(
                           builder: (context) =>
                               const AuthScreen(authType: AuthType.register)));
+                      Provider.of<UserSelection>(context).selectOne(1);
                       if (kDebugMode) {
                         print(widget.authType);
                       }
@@ -235,41 +239,6 @@ class _AuthFormState extends State<AuthForm> {
             const SizedBox(
               height: 20,
             ),
-            if (widget.authType == AuthType.register)
-              const Text.rich(TextSpan(
-                  text: 'By signing you agree to our ',
-                  style: TextStyle(
-                      fontFamily: 'Roboto',
-                      fontWeight: FontWeight.w600,
-                      fontSize: 10,
-                      color: Colors.grey),
-                  children: [
-                    TextSpan(
-                        text: 'terms and condition\n',
-                        style: TextStyle(
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.w600,
-                            fontSize: 10,
-                            color: Colors.red),
-                        children: [
-                          TextSpan(
-                              text: 'and',
-                              style: TextStyle(
-                                  fontFamily: 'Roboto',
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 10,
-                                  color: Colors.grey),
-                              children: [
-                                TextSpan(
-                                    text: ' privacy policy',
-                                    style: TextStyle(
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 10,
-                                        color: Colors.red))
-                              ])
-                        ])
-                  ])),
             const SizedBox(height: 16)
           ],
         ),

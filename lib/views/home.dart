@@ -93,23 +93,6 @@ class _HomePageState extends State<HomePage> {
                 itemCount: DataList.length,
                 itemBuilder: (context, index) {
                   final clicked = clickedStates[index];
-
-                  // Widget buildImageSlider() => CarouselSlider.builder(
-                  //       carouselController: controller,
-                  //       itemCount: DataList[index].imageList.length,
-                  //       itemBuilder: ((context, index, realIndex) {
-                  //         final image = DataList[index].imageList[index];
-                  //         return buildImage(image, index, context);
-                  //       }),
-                  //       options: CarouselOptions(
-                  //         height: MediaQuery.of(context).size.height * 0.45,
-                  //         initialPage: 0,
-                  //         onPageChanged: ((indexes, reason) =>
-                  //             setState(() => activeIndex = indexes)),
-                  //         enlargeCenterPage: true,
-                  //         viewportFraction: 1,
-                  //       ),
-                  //     );
                   return Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [

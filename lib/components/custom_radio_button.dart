@@ -29,7 +29,7 @@ class CustomRadioButton extends StatelessWidget {
           color: value == groupValue ? spartanRed : null,
           shape: BoxShape.circle,
           border: Border.all(
-            color: value == groupValue ? spartanRed : Colors.grey,
+            color: value == groupValue ? spartanRed : Colors.grey[800]!,
           ),
         ),
         child: value == groupValue

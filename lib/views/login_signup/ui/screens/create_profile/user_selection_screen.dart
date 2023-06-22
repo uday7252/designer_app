@@ -1,3 +1,4 @@
+import 'package:designer_app/provider/user_selection_provider.dart';
 import 'package:flutter/foundation.dart';
 
 import '/views/login_signup/ui/screens/create_profile/create_profile_screen.dart';
@@ -8,30 +9,10 @@ import '../../../../../components/original_button.dart';
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
-class UserSelectionScreen extends StatefulWidget {
+class UserSelectionScreen extends StatelessWidget {
   const UserSelectionScreen({Key? key}) : super(key: key);
-
-  @override
-  // ignore: library_private_types_in_public_api
-  _UserSelectionScreenState createState() => _UserSelectionScreenState();
-}
-
-class _UserSelectionScreenState extends State<UserSelectionScreen> {
-  List<bool> selected = [false, false];
-
-  void selectOne(int index) {
-    setState(() {
-      for (int i = 0; i < selected.length; i++) {
-        if (i == index) {
-          selected[i] = true;
-        } else {
-          selected[i] = false;
-        }
-      }
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,50 +66,54 @@ class _UserSelectionScreenState extends State<UserSelectionScreen> {
               const SizedBox(
                 height: 40,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  IconContainer(
-                    assetName: 'assets/icons/professional1.svg',
-                    text: 'Professional',
-                    isSelected: selected[0],
-                    onTap: () => selectOne(0),
-                  ),
-                  IconContainer(
-                    assetName: 'assets/icons/homeOwner.svg',
-                    text: 'Home Owner',
-                    isSelected: selected[1],
-                    onTap: () => selectOne(1),
-                  ),
-                ],
+              Consumer<UserSelection>(
+                builder: (context, provider, child) => Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    IconContainer(
+                      assetName: 'assets/icons/professional1.svg',
+                      text: 'Professional',
+                      isSelected: provider.selected[0],
+                      onTap: () => provider.selectOne(0),
+                    ),
+                    IconContainer(
+                      assetName: 'assets/icons/homeOwner.svg',
+                      text: 'Home Owner',
+                      isSelected: provider.selected[1],
+                      onTap: () => provider.selectOne(1),
+                    ),
+                  ],
+                ),
               ),
               const SizedBox(height: 60),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: OriginalButton(
-                  text: "Save & Next",
-                  onPressed: () {
-                    if (kDebugMode) {
-                      print('save & next');
-                    }
-                    if (selected[0]) {
+              Consumer<UserSelection>(
+                builder: (context, value, child) => Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: OriginalButton(
+                    text: "Save & Next",
+                    onPressed: () {
                       if (kDebugMode) {
-                        print('professional');
+                        print('save & next');
                       }
-                      Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const CreateProfileScreen(),
-                      ));
-                    } else if (selected[1]) {
-                      if (kDebugMode) {
-                        print('homeowner');
+                      if (value.selected[0]) {
+                        if (kDebugMode) {
+                          print('professional');
+                        }
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (context) => const CreateProfileScreen(),
+                        ));
+                      } else if (value.selected[1]) {
+                        if (kDebugMode) {
+                          print('homeowner');
+                        }
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (context) => const RootApp(),
+                        ));
                       }
-                      Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const RootApp(),
-                      ));
-                    }
-                  },
-                  color: Colors.black,
-                  textColor: Colors.white,
+                    },
+                    color: Colors.black,
+                    textColor: Colors.white,
+                  ),
                 ),
               ),
               const SizedBox(
